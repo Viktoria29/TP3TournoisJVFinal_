@@ -16,9 +16,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Test.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
-
-
+using TP3TournoisJVFinal.Models;
 
 namespace TP3TournoisJVFinal
 {
@@ -40,6 +38,8 @@ namespace TP3TournoisJVFinal
            /* services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();*/
             services.AddControllersWithViews();
+            services.AddDbContext<TournoiContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddRazorPages();
             services.Configure<IdentityOptions>(options =>
             {
