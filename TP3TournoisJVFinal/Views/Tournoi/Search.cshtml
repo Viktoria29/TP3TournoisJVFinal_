@@ -24,7 +24,7 @@
 
     <div class="form-group">
         <label class="col-form-label"> Recherche par Date</label>
-        @Html.TextBox("rechercheDate", null, new { @class = "form-control" })
+        @Html.TextBox("rechercheDate", null, new { @class = "form-control", type="Date", min="0"})
     </div>
 
     <div class="form-group">
@@ -102,5 +102,5 @@
 </table>
 
 <p>
-    <a asp-action="Create">Créer un nouveau tournoi</a>
+    <a asp-action="Index">Retour à la liste de tournois </a>
 </p>
